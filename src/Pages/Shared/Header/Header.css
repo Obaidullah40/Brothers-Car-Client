@@ -1,0 +1,53 @@
+.nav-Wrapper{
+    font-size: 17px;
+    border-bottom: 8px solid #5dddb0;
+    background-color: rgb(51, 94, 235);
+}
+.flex{
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}
+
+.pbotom{
+    /* padding-bottom: 50px; */
+}
+
+.login,
+.register{
+    border-radius: 20px;
+    border: 3px solid #3B3B3B;
+
+}
+.login{
+    margin-right: 10px;
+
+}
+.user_display_name{
+    color: #2D3E52;
+    font-size: 15px;
+    margin-right: 10px;
+    margin-bottom: 0px;
+}
+
+.nav_btn>a,
+.btn_nav_dropdown>a {
+    color: white;
+    padding: 4px 8px;
+}
+.nav_btn>a:focus,
+.btn_nav_dropdown>a:focus{
+    color: #3B3B3B;
+}
+.nav_btn>a:hover,
+.btn_nav_dropdown>a:hover{
+    color: #3B3B3B;
+}
+
+.login-name{
+    text-decoration: none;
+}
+
+.text-info_lol a{
+    text-decoration: none;
+}

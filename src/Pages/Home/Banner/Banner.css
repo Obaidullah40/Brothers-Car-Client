@@ -1,0 +1,17 @@
+.font{
+    font-family: 'Sevillana', cursive;
+    font-weight: 900;
+}
+
+.font-2{
+    /* font-family: 'Sevillana', cursive; */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.image:hover{
+    transform: scale(1.1);
+}
+
+.image{
+    transition: transform .4s;
+}

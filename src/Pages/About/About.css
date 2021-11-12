@@ -1,0 +1,36 @@
+.about-img {
+    background-image: url(https://i.ibb.co/8b551x5/pexels-stephan-m-ller-753876.jpg);
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 40px;
+}
+.font{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(4, 85, 192);
+   
+}
+
+.font-2{
+    font-family: 'Pacifico', cursive;
+    color: rgb(4, 85, 192);
+}
+.small-h {
+    font-size: small;
+    font-weight: 400;
+}
+.margin {
+    margin-left: 25px;
+}
+.number {
+    color: #ffaa30;
+}
+
+.text-color{
+ color: rgb(31, 1, 1);
+}
+
+.text-about {
+    color: rgb(150, 137, 137);
+}

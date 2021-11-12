@@ -1,0 +1,25 @@
+.bg-footer{
+    background-color: black;
+    color: #fff;
+    margin-top: 50px;
+    padding-top: 50px;
+    padding-bottom: 30px;
+}
+
+
+.bg-bottom{
+    background-color: rgb(14, 13, 13);
+    color: rgb(250, 241, 225);
+}
+
+.text-instagram{
+    color: #e63abbe0;
+}
+
+.color-y{
+    color: yellow;
+}
+
+.color-by:hover{
+    color: yellow;
+}

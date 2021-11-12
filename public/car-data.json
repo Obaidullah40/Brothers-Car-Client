@@ -1,0 +1,62 @@
+[
+    {
+        "pic": "https://i.ibb.co/zhkd7wL/pexels-cesar-perez-733745.jpg",
+        "name": "Audi",
+        "Price": 17390,
+        "description": "German Engineer August Horch founded the company August Horch & Cie.Due to misunderstandings among partners."
+    },
+    {
+        "pic": "https://i.ibb.co/Hgs59p1/pexels-nordic-overdrive-627678.jpg",
+        "name": "Cadillac",
+        "Price": 18990,
+        "description": "Cadillac was named after the great French explorer Antoine Laumet de La Mothe, Sieur de Cadillac, who founded Detroit, Michigan in 1701."
+    },
+    {
+        "pic": "https://i.ibb.co/vYvf28t/pexels-mike-120049.jpg",
+        "name": "BMW",
+        "Price": 48500,
+        "description": "The acronym BMW stands for Bayerische Motoren Werke GmnH. The name harks back to the company's origin in the German state of Bavaria."
+    },
+    {
+        "pic": "https://i.ibb.co/z5rjscc/pexels-pixabay-358070.jpg",
+        "name": "Datsun",
+        "Price": 23500,
+        "description": "The company began in 1911 as Kwaishinsha Jidosha Kojo, founded by M. Hashimoto. His dream was to produce cars uniquely suited to Japan."
+    },
+    {
+        "pic": "https://i.ibb.co/Rz4skG6/pexels-alex-amorales-909907.jpg",
+        "name": "Ferrari",
+        "Price": 21900,
+        "description": "The luxury car brand Ferrari is named after its Italian founder who was an official Alto race driver. In 1939, he quit racing to build his own company."
+    },
+    {
+        "pic": "https://i.ibb.co/YjJfCWV/pexels-alexgtacar-1592384.jpg",
+        "name": "Ford",
+        "Price": 53000,
+        "description": "Henry Ford founded the Ford Motors Company in 1903.Ford has left his first company Cadillac, and started his own car company."
+    },
+    {
+        "pic": "https://i.ibb.co/QFc4xxr/pexels-mike-116675.jpg",
+        "name": "Honda",
+        "Price": 47500,
+        "description": "Honda sold what was left of the company to Toyota and used the money to launch the Honda Technical Research Institute."
+    },
+    {
+        "pic": "https://i.ibb.co/Sfk93Fh/pexels-mike-241316.jpg",
+        "name": " Porsche",
+        "Price": 38000,
+        "description": "Porsche is named after its founder, Ferdinand Porsche, who started the company in 1931 Germany.Porsche is the majority shareholder in the Volkswagen family."
+    },
+    {
+        "pic": "https://i.ibb.co/NyTZ7d4/pexels-mike-112460.jpg",
+        "name": "Mercedes",
+        "Price": 43000,
+        "description": "Mercedes-Benz traces its origins to Karl Benz, who created the first internal combustion engine used in a car, the Benz Patent Motorwagen,"
+    },
+    {
+        "pic": "https://i.ibb.co/0n7H107/pexels-pixabay-210019.jpg",
+        "name": "Aston Martin",
+        "Price": 28000,
+        "description": "The name Aston Martin is derived partly from the name of its founder, Lionel Martin, and partly for a stretch of road in Hertfordshire, England, used for racing, called the Aston Hillclimb."
+    }
+]
