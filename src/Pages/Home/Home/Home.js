@@ -3,6 +3,7 @@ import Footer from '../../Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import Cars from '../Cars/Cars/Cars';
+import Reviews from '../Review/Reviews/Reviews';
 
 
 const Home = () => {
@@ -34,6 +35,7 @@ const Home = () => {
                     allowfullscreen
                 ></iframe>
             </div>
+            <Reviews></Reviews>
             <Footer></Footer>
         </div>
     );

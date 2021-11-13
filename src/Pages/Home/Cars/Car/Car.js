@@ -3,7 +3,7 @@ import { Button, Card, Col, Image, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
 const Car = ({car}) => {
-   const { name, description, Price, rating, _id, pic } = car;
+   const { name, description, Price, _id, pic } = car;
 
     return (
         <div className="rounded">
@@ -20,9 +20,6 @@ const Car = ({car}) => {
                         <Row>
                             <Col xs={6} md={8}>
                                 <h4>{name}</h4>
-                                <small className="text-warning">
-                                    <i>{rating}</i>
-                                </small>
                             </Col>
                             <Col className="text-danger" xs={6} md={4}>
                                 ${Price}

@@ -17,6 +17,8 @@ import ListItem from "@mui/material/ListItem";
 import LogoutIcon from '@mui/icons-material/Logout';
 import { pink } from '@mui/material/colors';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import { HashLink } from "react-router-hash-link";
+import Button from "@restart/ui/esm/Button";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import PaymentIcon from "@mui/icons-material/Payment";
@@ -25,12 +27,11 @@ import { NavLink } from "react-router-dom";
 import { Image, Navbar } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 import "./Dashboard.css";
-import Pay from "../Pay/Pay";
-import { HashLink } from "react-router-hash-link";
-import Button from "@restart/ui/esm/Button";
+import Pay from "../User/Pay/Pay";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import MakeAdmin from "../MakeAdmin/MakeAdmin";
-import MyOrders from "../MyOrders/MyOrders";
+import MyOrders from "../User/MyOrders/MyOrders";
+import Review from "../User/Review/Review";
 
 
 const drawerWidth = 240;
@@ -290,6 +291,9 @@ const Dashboard = () => {
                     </Route>
                     <Route path={`${path}/myOrders`}>
                         <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/review`}>
+                        <Review></Review>
                     </Route>
                     <Route path={`${path}/pay`}>
                         <Pay></Pay>
