@@ -18,7 +18,10 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { pink } from '@mui/material/colors';
 import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
 import { HashLink } from "react-router-hash-link";
-import Button from "@restart/ui/esm/Button";
+import AdminPanelSettingsTwoToneIcon from "@mui/icons-material/AdminPanelSettingsTwoTone";
+import AnimationTwoToneIcon from '@mui/icons-material/AnimationTwoTone';
+import AddBusinessTwoToneIcon from "@mui/icons-material/AddBusinessTwoTone";
+import SettingsApplicationsTwoToneIcon from "@mui/icons-material/SettingsApplicationsTwoTone";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ReviewsIcon from '@mui/icons-material/Reviews';
 import PaymentIcon from "@mui/icons-material/Payment";
@@ -28,10 +31,13 @@ import { Image, Navbar } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 import "./Dashboard.css";
 import Pay from "../User/Pay/Pay";
-import AdminRoute from "../AdminRoute/AdminRoute";
-import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import AdminRoute from "../Admin/AdminRoute/AdminRoute";
+import MakeAdmin from "../Admin/MakeAdmin/MakeAdmin";
 import MyOrders from "../User/MyOrders/MyOrders";
 import Review from "../User/Review/Review";
+import ManageProducts from "../Admin/ManageProducts/ManageProducts";
+import AddProduct from "../Admin/AddProduct/AddProduct";
+import ManageAllOrders from "../Admin/ManageAllOrders/ManageAllOrders";
 
 
 const drawerWidth = 240;
@@ -180,23 +186,12 @@ const Dashboard = () => {
                             </ListItemIcon>
                         </Box>
                     </ListItem>
-                    {/* <Link to="/pay">
-                        <Button color="inherit">Pay</Button>
-                    </Link> */}
-                    {/* <Link to={`${url}`}>
-                        <Button color="inherit">Dashboard</Button>
-                    </Link> */}
+
                     {admin && (
                         <Box>
-                            {/* <Link to={`${url}/makeAdmin`}>
-                                <Button color="inherit">Make Admin</Button>
-                            </Link> */}
-                            <Link to={`${url}/addDoctor`}>
-                                <Button color="inherit">Add Doctor</Button>
-                            </Link>
                             <ListItem button>
                                 <ListItemIcon>
-                                    <PaymentIcon color="primary" />
+                                    <AdminPanelSettingsTwoToneIcon color="primary" />
                                     <NavLink
                                         style={{
                                             textDecoration: "none",
@@ -209,53 +204,104 @@ const Dashboard = () => {
                                     </NavLink>
                                 </ListItemIcon>
                             </ListItem>
+
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <SettingsApplicationsTwoToneIcon />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/manageProducts`}
+                                    >
+                                        Manage Products
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <AddBusinessTwoToneIcon />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/addProduct`}
+                                    >
+                                        Add A Product
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <AnimationTwoToneIcon />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/manageAllOrders`}
+                                    >
+                                        Manage All Orders
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
                         </Box>
                     )}
-                    <ListItem button>
-                        <ListItemIcon>
-                            <PaymentIcon color="primary" />
-                            <NavLink
-                                style={{
-                                    textDecoration: "none",
-                                    color: "black",
-                                    marginLeft: "5px",
-                                }}
-                                to={`${url}/pay`}
-                            >
-                                Pay
-                            </NavLink>
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <DeliveryDiningIcon color="success" />
-                            <NavLink
-                                style={{
-                                    textDecoration: "none",
-                                    color: "black",
-                                    marginLeft: "5px",
-                                }}
-                                to={`${url}/myOrders`}
-                            >
-                                My Orders
-                            </NavLink>
-                        </ListItemIcon>
-                    </ListItem>
-                    <ListItem button>
-                        <ListItemIcon>
-                            <ReviewsIcon color="secondary" />
-                            <NavLink
-                                style={{
-                                    textDecoration: "none",
-                                    color: "black",
-                                    marginLeft: "5px",
-                                }}
-                                to={`${url}/review`}
-                            >
-                                Review
-                            </NavLink>
-                        </ListItemIcon>
-                    </ListItem>
+                    {!admin && (
+                        <>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <PaymentIcon color="primary" />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/pay`}
+                                    >
+                                        Pay
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <DeliveryDiningIcon color="success" />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/myOrders`}
+                                    >
+                                        My Orders
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <ReviewsIcon color="secondary" />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/review`}
+                                    >
+                                        Review
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                        </>
+                    )}
+
                     <ListItem button>
                         <ListItemIcon>
                             <LogoutIcon />
@@ -301,8 +347,14 @@ const Dashboard = () => {
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/addDoctor`}>
-                        {/* <AddDoctor></AddDoctor> */}
+                    <AdminRoute path={`${path}/manageProducts`}>
+                        <ManageProducts></ManageProducts>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/manageAllOrders`}>
+                        <ManageAllOrders></ManageAllOrders>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addProduct`}>
+                        <AddProduct></AddProduct>
                     </AdminRoute>
                 </Switch>
             </Box>
@@ -320,100 +372,3 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-// const drawerWidth = 240;
-
-// const Dashboard = (props) => {
-//     const { window } = props;
-//      let { path, url } = useRouteMatch();
-//      const { user, admin } = useAuth();
-//     return (
-//         <Box sx={{ display: "flex" }}>
-//             <CssBaseline />
-//             <AppBar
-//                 position="fixed"
-//                 sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}
-//             >
-//                 <Toolbar className="bg-success layout-top">
-//                     <Typography variant="h6" noWrap component="div">
-//                         <Image
-//                             width="76px"
-//                             height="50px"
-//                             src="https://i.ibb.co/9wKG2Qb/Screenshot-2021-11-12-075157-removebg-preview.png"
-//                             fluid
-//                         />
-//                         Brothers Car
-//                     </Typography>
-//                     <Navbar.Text className="text-info_lol text-light fw-bold">
-//                         <a href="#login">{user?.displayName || user.email}</a>
-//                     </Navbar.Text>
-//                 </Toolbar>
-//             </AppBar>
-//             <Drawer
-//                 variant="permanent"
-//                 sx={{
-//                     width: drawerWidth,
-//                     flexShrink: 0,
-//                     [`& .MuiDrawer-paper`]: {
-//                         width: drawerWidth,
-//                         boxSizing: "border-box",
-//                     },
-//                 }}
-//             >
-//                 <Toolbar />
-//                 <Divider />
-//                 <Link to="/">
-//                     <Button color="inherit">Home</Button>
-//                 </Link>
-//                 <Link to={`${url}`}>
-//                     <Button color="inherit">Dashboard</Button>
-//                 </Link>
-//                 {/* {admin && ( */}
-//                 <Box>
-//                     <Link to={`${url}/makeAdmin`}>
-//                         <Button color="inherit">Make Admin</Button>
-//                     </Link>
-//                     <Link to={`${url}/addDoctor`}>
-//                         <Button color="inherit">Add Doctor</Button>
-//                     </Link>
-//                 </Box>
-//                 {/* )} */}
-//                 <Box sx={{ overflow: "auto" }}>
-//                     <List>
-//                         {["Inbox", "Starred", "Send email", "Drafts"].map(
-//                             (text, index) => (
-//                                 <ListItem button key={text}>
-//                                     <ListItemIcon>
-//                                         {index % 2 === 0 ? (
-//                                             <InboxIcon />
-//                                         ) : (
-//                                             <MailIcon />
-//                                         )}
-//                                     </ListItemIcon>
-//                                     <ListItemText primary={text} />
-//                                 </ListItem>
-//                             )
-//                         )}
-//                     </List>
-//                     <Divider />
-//                     <List>
-//                         {/* {["All mail", "Trash", "Spam"].map((text, index) => (
-//                             <ListItem button key={text}>
-//                                 <ListItemIcon>
-//                                     {index % 2 === 0 ? (
-//                                         <InboxIcon />
-//                                     ) : (
-//                                         <MailIcon />
-//                                     )}
-//                                 </ListItemIcon>
-//                                 <ListItemText primary={text} />
-//                             </ListItem>
-//                         ))} */}
-//                     </List>
-//                 </Box>
-//             </Drawer>
-//         </Box>
-//     );
-// }
-
-// export default Dashboard;
