@@ -45,8 +45,12 @@ const Header = () => {
                                     Dashboard
                                 </Nav.Link>
 
-                                <Navbar.Text className="text-info_lol">
-                                    <a href="#login">
+                                <Navbar.Text className="text-info_lol p-0 pt-0 ps-3 pe-2">
+                                    <a href="#login" style={{
+                                color: "white",
+                                fontSize: "25px",
+                                textDecoration: "none",
+                            }}>
                                         {user?.displayName || user.email}
                                     </a>
                                 </Navbar.Text>

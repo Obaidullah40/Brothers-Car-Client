@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import Footer from '../../Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Form from "../Form/Form";
 
@@ -15,9 +16,10 @@ const Booking = () => {
            .then((res) => res.json())
            .then((data) => setService(data));
    }, []);
-   console.log("ai galo", service);
-   return (
-       <Container>
+    return (
+        <>
+        <Header></Header>
+        <Container className='mt-3'>
            <Row>
                <Col xs={12} md={8} lg={8}>
                    <Card className="bg-dark text-white">
@@ -34,6 +36,8 @@ const Booking = () => {
                </Col>
            </Row>
        </Container>
+       <Footer></Footer>
+       </>
    );
 };
 

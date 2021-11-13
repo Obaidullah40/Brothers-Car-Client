@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../../Footer/Footer';
 import Header from '../../Shared/Header/Header';
 import Banner from '../Banner/Banner';
 import Cars from '../Cars/Cars/Cars';
@@ -33,6 +34,7 @@ const Home = () => {
                     allowfullscreen
                 ></iframe>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Grid from '@mui/material/Grid';
-import Appointments from '../Appointments/Appointments';
+// import Appointments from '../Appointments/Appointments';
 // import Calendar from '../../Shared/Calendar/Calendar';
 
 
@@ -15,7 +15,7 @@ const DashboardHome = () => {
                 ></Calendar> */}
             </Grid>
             <Grid item xs={12} sm={7}>
-                <Appointments date={date}></Appointments>
+                {/* <Appointments date={date}></Appointments> */}
             </Grid>
         </Grid>
     );

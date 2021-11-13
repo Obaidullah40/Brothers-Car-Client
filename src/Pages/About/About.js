@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Footer from '../Footer/Footer';
 import Header from '../Shared/Header/Header';
 import "./About.css"
 
@@ -87,6 +88,7 @@ const About = () => {
                     </Row>
                 </Container>
             </div>
+            <Footer></Footer>
         </div>
     );
 };
