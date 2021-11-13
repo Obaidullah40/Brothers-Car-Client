@@ -16,17 +16,7 @@ const Form = (props) => {
       const { user, email, city, address, phone } = data;
       const status = "pending";
       const order = {
-          name,
-          image,
-          cost,
-          description,
-          user,
-          email,
-          city,
-          address,
-          phone,
-          status,
-      };
+          name, image, cost, description, user, email, city, address, phone, status };
       fetch("http://localhost:5000/books", {
           method: "POST",
           headers: {

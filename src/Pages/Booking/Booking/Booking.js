@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
+import Header from '../../Shared/Header/Header';
+import Form from "../Form/Form";
+
 
 const Booking = () => {
+    <Header></Header>
    const { serviceId } = useParams();
    const [service, setService] = useState({});
 
@@ -26,7 +30,7 @@ const Booking = () => {
                </Col>
                <Col xs={12} md={4} lg={4}>
                    <h5 className="text-center">Your Booking Id: {serviceId}</h5>
-                   {/* {<Form service={service}></Form>} */}
+                   {<Form service={service}></Form>}
                </Col>
            </Row>
        </Container>

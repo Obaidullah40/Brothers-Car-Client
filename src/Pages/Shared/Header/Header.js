@@ -41,13 +41,11 @@ const Header = () => {
 
                         {user?.email ? (
                             <>
-                                <Nav.Link as={HashLink} to="/orders">
-                                    My Orders
+                                <Nav.Link as={HashLink} to="/dashboard">
+                                    Dashboard
                                 </Nav.Link>
 
-                                <Navbar.Text
-                                        className="text-info_lol"
-                                >
+                                <Navbar.Text className="text-info_lol">
                                     <a href="#login">
                                         {user?.displayName || user.email}
                                     </a>

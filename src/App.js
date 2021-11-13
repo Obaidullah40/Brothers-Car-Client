@@ -14,6 +14,7 @@ import Footer from "./Pages/Footer/Footer";
 import About from "./Pages/About/About";
 import Booking from "./Pages/Booking/Booking/Booking";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
+import Dashboard from "./Dashboard/Dashboard/Dashboard";
 
 
 function App() {
@@ -40,6 +41,9 @@ function App() {
                       <Route path="/aboutUs">
                           <About></About>
                       </Route>
+                      <PrivateRoute path="/dashboard">
+                          <Dashboard />
+                      </PrivateRoute>
                       <PrivateRoute path="/booking/:serviceId">
                           <Booking></Booking>
                       </PrivateRoute>

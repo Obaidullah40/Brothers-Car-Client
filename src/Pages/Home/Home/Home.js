@@ -1,14 +1,13 @@
 import React from 'react';
 import Header from '../../Shared/Header/Header';
-import Navigation from '../../Shared/Navigation/Navigation';
 import Banner from '../Banner/Banner';
 import Cars from '../Cars/Cars/Cars';
+
 
 const Home = () => {
     return (
         <div>
             <Header></Header>
-            {/* <Navigation></Navigation> */}
             <Banner></Banner>
             <Cars></Cars>
             <div className="video">
