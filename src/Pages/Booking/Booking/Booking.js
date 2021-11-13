@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
-import { useParams } from 'react-router';
-import Footer from '../../Footer/Footer';
-import Header from '../../Shared/Header/Header';
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { useParams } from "react-router";
+import Footer from "../../Footer/Footer";
+import Header from "../../Shared/Header/Header";
 import Form from "../Form/Form";
 
-
 const Booking = () => {
-   const { serviceId } = useParams();
-   const [service, setService] = useState({});
+    const { serviceId } = useParams();
+    const [service, setService] = useState({});
 
-   useEffect(() => {
-       fetch(`http://localhost:5000/services/${serviceId}`)
-           .then((res) => res.json())
-           .then((data) => setService(data));
-   }, []);
+    useEffect(() => {
+        fetch(
+            `https://whispering-basin-97817.herokuapp.com/services/${serviceId}`
+        )
+            .then((res) => res.json())
+            .then((data) => setService(data));
+    }, []);
     return (
         <>
             <Header></Header>

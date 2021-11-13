@@ -9,11 +9,7 @@ import {
     GoogleAuthProvider,
     signInWithPopup,
     updateProfile,
-
 } from "firebase/auth";
-
-
-
 
 //  initialize firebase app
 initializeFirebase();
@@ -21,12 +17,11 @@ initializeFirebase();
 const useFirebase = () => {
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
-    const [authError, setAuthError] = useState('');
+    const [authError, setAuthError] = useState("");
     const [admin, setAdmin] = useState(false);
 
-
     const auth = getAuth();
-     const googleProvider = new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
     const registerUser = (email, password, name, history) => {
         setIsLoading(true);
@@ -52,38 +47,35 @@ const useFirebase = () => {
             .finally(() => setIsLoading(false));
     };
 
-
     const loginUser = (email, password, location, history) => {
         setIsLoading(true);
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
-                const destination = location?.state?.from || '/';
+                const destination = location?.state?.from || "/";
                 history.replace(destination);
-                setAuthError('');
+                setAuthError("");
             })
             .catch((error) => {
                 setAuthError(error.message);
             })
             .finally(() => setIsLoading(false));
-    }
-
-
-     const signInWithGoogle = (location, history) => {
-         setIsLoading(true);
-         signInWithPopup(auth, googleProvider)
-             .then((result) => {
-                 const user = result.user;
-                 saveUser(user.email, user.displayName, "PUT");
-                 setAuthError("");
-                 const destination = location?.state?.from || "/";
-                 history.replace(destination);
-             })
-             .catch((error) => {
-                 setAuthError(error.message);
-             })
-             .finally(() => setIsLoading(false));
     };
-    
+
+    const signInWithGoogle = (location, history) => {
+        setIsLoading(true);
+        signInWithPopup(auth, googleProvider)
+            .then((result) => {
+                const user = result.user;
+                saveUser(user.email, user.displayName, "PUT");
+                setAuthError("");
+                const destination = location?.state?.from || "/";
+                history.replace(destination);
+            })
+            .catch((error) => {
+                setAuthError(error.message);
+            })
+            .finally(() => setIsLoading(false));
+    };
 
     // observer user state
     useEffect(() => {
@@ -91,39 +83,43 @@ const useFirebase = () => {
             if (user) {
                 setUser(user);
             } else {
-                setUser({})
+                setUser({});
             }
             setIsLoading(false);
         });
         return () => unsubscribed;
-    }, [auth])
+    }, [auth]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/users/${user.email}`)
+        fetch(
+            `https://whispering-basin-97817.herokuapp.com/users/${user.email}`
+        )
             .then((res) => res.json())
             .then((data) => setAdmin(data.admin));
     }, [user?.email]);
 
     const logout = () => {
         setIsLoading(true);
-        signOut(auth).then(() => {
-            // Sign-out successful.
-        }).catch((error) => {
-            // An error happened.
-        })
+        signOut(auth)
+            .then(() => {
+                // Sign-out successful.
+            })
+            .catch((error) => {
+                // An error happened.
+            })
             .finally(() => setIsLoading(false));
-    }
+    };
 
-     const saveUser = (email, displayName, method) => {
-         const user = { email, displayName };
-         fetch("http://localhost:5000/users", {
-             method: method,
-             headers: {
-                 "content-type": "application/json",
-             },
-             body: JSON.stringify(user),
-         }).then();
-     };
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch("https://whispering-basin-97817.herokuapp.com/users", {
+            method: method,
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify(user),
+        }).then();
+    };
 
     return {
         user,
@@ -134,7 +130,7 @@ const useFirebase = () => {
         loginUser,
         signInWithGoogle,
         logout,
-    }
-}
+    };
+};
 
 export default useFirebase;

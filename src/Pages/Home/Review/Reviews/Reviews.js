@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from 'react';
-import { Col, Row } from 'react-bootstrap';
-import { useHistory } from 'react-router';
-import Review from '../Review/Review';
+import React, { useEffect, useState } from "react";
+import { Col, Row } from "react-bootstrap";
+import { useHistory } from "react-router";
+import Review from "../Review/Review";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/review")
+        fetch("https://whispering-basin-97817.herokuapp.com/review")
             .then((res) => res.json())
             .then((data) => setReviews(data));
     }, []);
-
 
     return (
         <div className="container" id="reviews">
@@ -40,6 +39,5 @@ const Reviews = () => {
         </div>
     );
 };
-
 
 export default Reviews;

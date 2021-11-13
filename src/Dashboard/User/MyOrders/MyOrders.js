@@ -1,18 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import { Card, Col, Container, Image, Row } from 'react-bootstrap';
-import { CircularProgress } from '@mui/material';
-import useAuth from '../../../hooks/useAuth';
-
+import React, { useEffect, useState } from "react";
+import { Card, Col, Container, Image, Row } from "react-bootstrap";
+import { CircularProgress } from "@mui/material";
+import useAuth from "../../../hooks/useAuth";
 
 const MyOrders = () => {
     const { user, token } = useAuth();
     const [orders, setOrders] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/books?email=${user?.email}`, {
-            headers: {
-                authorization: `Bearer ${token}`,
-            },
-        })
+        fetch(
+            `https://whispering-basin-97817.herokuapp.com/books?email=${user?.email}`,
+            {
+                headers: {
+                    authorization: `Bearer ${token}`,
+                },
+            }
+        )
             .then((res) => res.json())
             .then((data) => {
                 setOrders(data);
@@ -21,7 +23,7 @@ const MyOrders = () => {
 
     // manage DELETE
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/books/${id}`, {
+        fetch(`https://whispering-basin-97817.herokuapp.com/books/${id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
