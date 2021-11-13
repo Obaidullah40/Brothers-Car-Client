@@ -25,10 +25,12 @@ import { NavLink } from "react-router-dom";
 import { Image, Navbar } from "react-bootstrap";
 import useAuth from "../../hooks/useAuth";
 import "./Dashboard.css";
-import DashboardHome from "../DashboardHome/DashboardHome";
-
 import Pay from "../Pay/Pay";
 import { HashLink } from "react-router-hash-link";
+import Button from "@restart/ui/esm/Button";
+import AdminRoute from "../AdminRoute/AdminRoute";
+import MakeAdmin from "../MakeAdmin/MakeAdmin";
+import MyOrders from "../MyOrders/MyOrders";
 
 
 const drawerWidth = 240;
@@ -183,13 +185,31 @@ const Dashboard = () => {
                     {/* <Link to={`${url}`}>
                         <Button color="inherit">Dashboard</Button>
                     </Link> */}
-                    {/* {admin && ( */}
-                    <Box>
-                        {/* <Link to={`${url}/addDoctor`}>
-                            <Button color="inherit">Add Doctor</Button>
-                        </Link> */}
-                    </Box>
-                    {/* )} */}
+                    {admin && (
+                        <Box>
+                            {/* <Link to={`${url}/makeAdmin`}>
+                                <Button color="inherit">Make Admin</Button>
+                            </Link> */}
+                            <Link to={`${url}/addDoctor`}>
+                                <Button color="inherit">Add Doctor</Button>
+                            </Link>
+                            <ListItem button>
+                                <ListItemIcon>
+                                    <PaymentIcon color="primary" />
+                                    <NavLink
+                                        style={{
+                                            textDecoration: "none",
+                                            color: "black",
+                                            marginLeft: "5px",
+                                        }}
+                                        to={`${url}/makeAdmin`}
+                                    >
+                                        Make Admin
+                                    </NavLink>
+                                </ListItemIcon>
+                            </ListItem>
+                        </Box>
+                    )}
                     <ListItem button>
                         <ListItemIcon>
                             <PaymentIcon color="primary" />
@@ -266,17 +286,20 @@ const Dashboard = () => {
 
                 <Switch>
                     <Route exact path={path}>
-                        <DashboardHome></DashboardHome>
+                        {/* <DashboardHome></DashboardHome> */}
                     </Route>
-                    <Route path={path}>
+                    <Route path={`${path}/myOrders`}>
+                        <MyOrders></MyOrders>
+                    </Route>
+                    <Route path={`${path}/pay`}>
                         <Pay></Pay>
                     </Route>
-                    {/* <AdminRoute path={`${path}/makeAdmin`}>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
                     <AdminRoute path={`${path}/addDoctor`}>
-                        <AddDoctor></AddDoctor>
-                    </AdminRoute> */}
+                        {/* <AddDoctor></AddDoctor> */}
+                    </AdminRoute>
                 </Switch>
             </Box>
             <Main open={open}>
@@ -293,17 +316,6 @@ const Dashboard = () => {
 };
 
 export default Dashboard;
-
-// import * as React from "react";
-// import { Switch, Route, Link, useRouteMatch } from "react-router-dom";
-// import { AppBar, Button, CssBaseline, Divider, Drawer, List, ListItem, ListItemIcon, ListItemText, Toolbar, Typography } from '@mui/material';
-// import PropTypes from "prop-types";
-// import { Box } from '@mui/system';
-// import MailIcon from "@mui/icons-material/Mail";
-// import InboxIcon from "@mui/icons-material/MoveToInbox";
-// import useAuth from "../../hooks/useAuth";
-// import { Image, Navbar } from "react-bootstrap";
-// import './Dashboard.css'
 
 // const drawerWidth = 240;
 
@@ -396,26 +408,6 @@ export default Dashboard;
 //                     </List>
 //                 </Box>
 //             </Drawer>
-//             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
-//                 <Toolbar />
-//                 <Typography paragraph>
-//                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-//                     do eiusmod tempor incididunt ut labore et dolore magna
-//                     aliqua. Rhoncus dolor purus non enim praesent elementum
-//                     facilisis leo vel. Risus at ultrices mi tempus imperdiet.
-//                     Semper risus in hendrerit gravida rutrum quisque non tellus.
-//                     Convallis convallis tellus id interdum velit laoreet id
-//                     donec ultrices. Odio morbi quis commodo odio aenean sed
-//                     adipiscing. Amet nisl suscipit adipiscing bibendum est
-//                     ultricies integer quis. Cursus euismod quis viverra nibh
-//                     cras. Metus vulputate eu scelerisque felis imperdiet proin
-//                     fermentum leo. Mauris commodo quis imperdiet massa
-//                     tincidunt. Cras tincidunt lobortis feugiat vivamus at augue.
-//                     At augue eget arcu dictum varius duis at consectetur lorem.
-//                     Velit sed ullamcorper morbi tincidunt. Lorem donec massa
-//                     sapien faucibus et molestie ac.
-//                 </Typography>
-//             </Box>
 //         </Box>
 //     );
 // }
