@@ -39,9 +39,9 @@ const MakeAdmin = () => {
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                <Button type="submit" className="bg-success m-3" variant="contained">Make Admin</Button>
             </form>
-            {success && <Alert severity="success">Made Admin successfully!</Alert>}
+            {success && <Alert className="mx-5" severity="success">Made Admin successfully!</Alert>}
         </div>
     );
 };
