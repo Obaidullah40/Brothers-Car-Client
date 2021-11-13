@@ -30,7 +30,7 @@ const ManageProducts = () => {
         <div className="manage_services_container">
             <h1 className="text-center text-danger mb-5">Manage products</h1>
 
-            <Row xs={1} md={3} xl={5} className="g-4">
+            <Row xs={1} md={3} xxl={5} className="g-4">
                 {services.map((service) => (
                     <Col>
                         <Card>

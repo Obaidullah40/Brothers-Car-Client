@@ -46,9 +46,14 @@ const Form = (props) => {
     return (
         <div>
             <form className="shipping-form" onSubmit={handleSubmit(onSubmit)}>
-                <input defaultValue={user.displayName} {...register("user")} />
-                <br />
                 <input
+                    className="w-75"
+                    defaultValue={user.displayName}
+                    {...register("user")}
+                />
+
+                <input
+                    className="w-75"
                     defaultValue={user.email}
                     {...register("email", { required: true })}
                 />
@@ -56,27 +61,29 @@ const Form = (props) => {
                 {errors.email && (
                     <span className="error">This field is required</span>
                 )}
-                <br />
+
                 <input
+                    className="w-75"
                     placeholder="Address"
                     defaultValue=""
                     {...register("address")}
                 />
-                <br />
+
                 <input
+                    className="w-75"
                     placeholder="City"
                     defaultValue=""
                     {...register("city")}
                 />
-                <br />
+
                 <input
+                    className="w-75"
                     placeholder="phone number"
                     defaultValue=""
                     {...register("phone")}
                 />
-                <br />
 
-                <input className="bg-warning" type="submit" />
+                <input className="btn-success btn" type="submit" />
             </form>
         </div>
     );

@@ -22,7 +22,7 @@ const Booking = () => {
 
             <Container className="mt-3">
                 <Row>
-                    <Col xs={12} md={8} lg={8}>
+                    <Col xs={12} md={7} lg={8}>
                         <div className="service-img">
                             <Image width="400px" src={service?.pic} thumbnail />
                         </div>
@@ -34,7 +34,7 @@ const Booking = () => {
                             <p>{service?.description}</p>
                         </div>
                     </Col>
-                    <Col xs={12} md={4} lg={4}>
+                    <Col xs={12} md={5} lg={4}>
                         <h5 className="text-center">
                             Your Booking Id: {serviceId}
                         </h5>
