@@ -25,11 +25,6 @@ const Booking = () => {
                     <Col xs={12} md={8} lg={8}>
                         <div className="service-img">
                             <Image width="400px" src={service?.pic} thumbnail />
-                            {/* <img
-                                style={{ width: "100%" }}
-                                src={service?.pic}
-                                alt=""
-                            /> */}
                         </div>
                         <div className="service-info p-3">
                             <h3>{service?.name}</h3>
